@@ -1,3 +1,15 @@
-h1 { font-family: arial; color: red;}
-p { font-family: times; color: blue; font-size: 24px;}
+h1 { 
+	font-family: arial;
+	color: red;
+}
+
+p { 
+	font-family: times; 
+	color: blue; 
+	font-size: 24px; 
+	text-align: center;
+}
+.center {
+	text-align: center;
+}
 
