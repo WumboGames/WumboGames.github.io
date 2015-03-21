@@ -1,17 +1,20 @@
-h1 { 
-	font-family: arial;
+h1.title {
 	color: red;
+	font-family: times;
+	font-size: 42px;
 }
 
-p { 
-	font-family: times; 
-	color: blue; 
-	font-size: 24px; 
-	text-align: center;
-}
-.middle {
-	text-align: center;
-}
-.left {
+p.normal {
+	color: black;
+	font-family: arial;
+	font-size: 16px;
 	text-align: left;
+}
+
+p.small {
+	font-size:12px;
+}
+
+.centered {
+	text-align: center;
 }
