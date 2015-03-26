@@ -2,10 +2,12 @@ h1.title {
 	color: red;
 	font-family: times;
 	font-size: 42px;
+	text-align: center;
 }
 
 p.normal {
-	color: black;
+	text-indent: 15px;
+	color: #000000;
 	font-family: arial;
 	font-size: 16px;
 	text-align: left;
@@ -15,6 +17,46 @@ p.small {
 	font-size:14px;
 }
 
-.centered {
-	text-align: center;
+body {
+	margin: 0px;
+	padding: 0px;
+	background-color: #000000;
+}
+
+div.header {
+	background-color: #000000;
+	width: 100%;
+	padding: 0%;
+	margin-top: 0px;
+}
+
+div.maintext {
+	background-color: #e0e0ff;
+	width: 80%;
+	float: left;
+	margin-top:0%;
+	margin-left: 10%;
+	margin-right: 10%;
+	margin-bottom: 20px;
+	padding: 15px;
+}
+
+div.gamepanel {
+	background-color: ffffff;
+	width: 80%;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+div.photo {
+	float: left;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+div.gamedescription {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
 }
