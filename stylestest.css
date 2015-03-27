@@ -6,11 +6,13 @@ h1.title {
 }
 
 p.normal {
-	text-indent: 15px;
-	color: #000000;
+	text-indent: 30px;
+	color: #00554a;
 	font-family: arial;
+	font-weight: medium;
 	font-size: 16px;
 	text-align: left;
+	line-height: 30px;
 }
 
 p.small {
@@ -21,6 +23,31 @@ body {
 	margin: 0px;
 	padding: 0px;
 	background-color: #000000;
+}
+
+ul.directory {
+	list-style-type: none;
+	text-align: center;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+}
+
+ul.directory li {
+	display:inline-block;
+    *display:inline; /*IE7*/
+    *zoom:1; /*IE7*/
+    background:#000000;
+	padding-right: 30px;
+	padding-left: 30px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+	margin-bottom: 10px;
+    color: #00554a;/*#9a0000;*/
+	font-family: arial;
+	font-weight: bold;
+	font-size: 20px;
+    margin-right:2%;
 }
 
 div.header {
@@ -36,27 +63,47 @@ div.maintext {
 	float: left;
 	margin-top:0%;
 	margin-left: 10%;
-	margin-right: 10%;
+	margin-right: 0%;
 	margin-bottom: 20px;
 	padding: 15px;
 }
 
 div.gamepanel {
 	background-color: ffffff;
-	width: 80%;
 	margin-top: 20px;
+	margin-right: 10px;
+	margin-left: 10px;
 	margin-bottom: 20px;
 }
 
 div.photo {
 	float: left;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
 }
 
 div.gamedescription {
 	padding-top: 10px;
 	padding-bottom: 10px;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+div.photoRight {
+	float:right;
+}
+
+a.directory:link {
+	color: #00554a;
+	text-decoration: none;
+}
+
+a.directory:visited {
+	color: #00554a;
+	text-decoration: none;
+}
+
+a.directory:active {
+	color: #a90000;
+	text-decoration: underline;
 }
