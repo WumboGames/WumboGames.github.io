@@ -148,6 +148,14 @@ div.photolist {
 	padding-bottom:15px;
 }
 
+div.photolistright {
+	float: right;
+	padding-left:30px;
+	padding-right:30px;
+	padding-top:15px;
+	padding-bottom:15px;
+}
+
 .center {
 	display: block;
 	margin-left: auto;
