@@ -1,9 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Wumbo Games</title>
-<meta name="author" content="David Harmeyer">
-<link rel="stylesheet" type="text/css" href="stylestest.css">
+	<title>Wumbo Games</title>
+	<meta name="author" content="David Harmeyer">
+	<link rel="stylesheet" type="text/css" href="stylestest.css">
+	<script language= "JavaScript">
+		function updateTimer() {
+			var currentDay=new Date();
+			var seconds=60-currentDay.getSeconds();
+			var minutes=60-(currentDay.getMinutes()+30);
+			var hours=10-(currentDay.getHours());
+			if (minutes<0) {
+				minutes+=60;
+				hours--;
+			}
+			document.getElementById("timer").innerHTML=(hours+" Hours, "+minutes+" Minutes, "+seconds+" Seconds");
+		}
+	</script>
 </head>
 <body>
 <div class="header">
@@ -17,6 +30,17 @@
 		<li><a class="directory" href="cramped.html">Cramped</a></li>
 	</ul>
 	<br clear="all">
+	
+	<div id="cyberwarscountdown">
+		<h3 class="cyberwarscountdown">Cyber Wars Countdown Timer:</h3>
+		<h3 class="cyberwarscountdown bigger" id="timer">Loading...</h3>
+	</div>
+	<br clear="all">
+	
+	<script language="JavaScript">
+		updateTimer();
+		window.setInterval(function() {updateTimer()}, 200);
+	</script>
 	
 	<div class="gamepanel">
 		<div class="photo photoright">
