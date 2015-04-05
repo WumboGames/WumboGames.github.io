@@ -8,8 +8,8 @@
 		function updateTimer() {
 			var currentDay=new Date();
 			var seconds=60-currentDay.getSeconds();
-			var minutes=60-(currentDay.getMinutes()+30);
-			var hours=10-(currentDay.getHours());
+			var minutes=60-(currentDay.getMinutes());
+			var hours=11-(currentDay.getHours());
 			if (minutes<0) {
 				minutes+=60;
 				hours--;
