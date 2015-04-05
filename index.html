@@ -9,12 +9,14 @@
 			var currentDay=new Date();
 			var seconds=60-currentDay.getSeconds();
 			var minutes=60-(currentDay.getMinutes());
-			var hours=11-(currentDay.getHours());
+			var hours=10-(currentDay.getHours());
 			if (minutes<0) {
 				minutes+=60;
 				hours--;
 			}
-			document.getElementById("timer").innerHTML=(hours+" Hours, "+minutes+" Minutes, "+seconds+" Seconds");
+			if (hours>0) document.getElementById("timer").innerHTML=(hours+" Hours, "+minutes+" Minutes, "+seconds+" Seconds");
+			else if (minutes>0) document.getElementById("timer").innerHTML=(minutes+" Minutes, "+seconds+" Seconds");
+			else document.getElementById("timer").innerHTML=(seconds+" Seconds");
 		}
 	</script>
 </head>
