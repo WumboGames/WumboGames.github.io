@@ -8,15 +8,21 @@
 		function updateTimer() {
 			var currentDay=new Date();
 			var seconds=60-currentDay.getSeconds();
-			var minutes=60-(currentDay.getMinutes());
-			var hours=10-(currentDay.getHours());
+			var minutes=60-(currentDay.getMinutes()+45);
+			var hours=11-(currentDay.getHours());
 			if (minutes<0) {
 				minutes+=60;
 				hours--;
 			}
-			if (hours>0) document.getElementById("timer").innerHTML=(hours+" Hours, "+minutes+" Minutes, "+seconds+" Seconds");
-			else if (minutes>0) document.getElementById("timer").innerHTML=(minutes+" Minutes, "+seconds+" Seconds");
-			else document.getElementById("timer").innerHTML=(seconds+" Seconds");
+			if (hours<0) {
+				document.getElementById("timer").innerHTML=("Play it Now!");
+			}
+			else {
+				if (hours>0) document.getElementById("timer").innerHTML=(hours+" Hours, "+minutes+" Minutes, "+seconds+" Seconds");
+				else if (minutes>0) document.getElementById("timer").innerHTML=(minutes+" Minutes, "+seconds+" Seconds");
+				else document.getElementById("timer").innerHTML=(seconds+" Seconds");
+				window.setTimeout(function() {updateTimer()}, 200);
+			}
 		}
 	</script>
 </head>
