@@ -186,6 +186,17 @@ div#cyberwarscountdown {
 	background-color: #5a57dd;
 }
 
+div#unityPlayer {
+	display:block;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+div#unitycontent {
+	margin:auto;
+	width:920px;
+}
+
 .center {
 	display: block;
 	margin-left: auto;

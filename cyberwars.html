@@ -4,21 +4,91 @@
 	<title>Wumbo Games</title>
 	<meta name="author" content="David Harmeyer">
 	<link rel="stylesheet" type="text/css" href="stylestest.css">
+	
+	<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
+	<script type="text/javascript">
+		<!--
+			var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+			if (document.location.protocol == 'https:')
+				unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+			document.write('<script type="text/javascript" src="' + unityObjectUrl + '"></script>');
+		-->
+	</script>
+	<script type="text/javascript">
+		<!--
+		function runGame() {
+			var config = {
+				width: 960, 
+				height: 600,
+				params: { enableDebugging:"0" }
+				
+			};
+			var u = new UnityObject2(config);
+
+			jQuery(function() {
+
+				var $missingScreen = jQuery("#unityPlayer").find(".missing");
+				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+				$missingScreen.hide();
+				$brokenScreen.hide();
+				
+				u.observeProgress(function (progress) {
+					switch(progress.pluginStatus) {
+						case "broken":
+							$brokenScreen.find("a").click(function (e) {
+								e.stopPropagation();
+								e.preventDefault();
+								u.installPlugin();
+								return false;
+							});
+							$brokenScreen.show();
+						break;
+						case "missing":
+							$missingScreen.find("a").click(function (e) {
+								e.stopPropagation();
+								e.preventDefault();
+								u.installPlugin();
+								return false;
+							});
+							$missingScreen.show();
+						break;
+						case "installed":
+							$missingScreen.remove();
+						break;
+						case "first":
+						break;
+					}
+				});
+				u.initPlugin(jQuery("#unityPlayer")[0], "CyberWars.unity3d");
+			});
+		-->
+		}
+		</script>
 	<script language= "JavaScript">
 		function updateTimer() {
 			var currentDay=new Date();
 			var seconds=60-currentDay.getSeconds();
-			var minutes=60-(currentDay.getMinutes());
-			var hours=10-(currentDay.getHours());
+			var minutes=60-(currentDay.getMinutes()+45);
+			var hours=11-(currentDay.getHours());
 			if (minutes<0) {
 				minutes+=60;
 				hours--;
 			}
-			if (hours>0) document.getElementById("timer").innerHTML=(hours+" Hours, "+minutes+" Minutes, "+seconds+" Seconds");
-			else if (minutes>0) document.getElementById("timer").innerHTML=(minutes+" Minutes, "+seconds+" Seconds");
-			else document.getElementById("timer").innerHTML=(seconds+" Seconds");
+			if (hours<0) {
+				document.getElementById("timer").innerHTML=("Play it Now!");
+				runGame();
+			}
+			else {
+				if (hours>0) document.getElementById("timer").innerHTML=(hours+" Hours, "+minutes+" Minutes, "+seconds+" Seconds");
+				else if (minutes>0) document.getElementById("timer").innerHTML=(minutes+" Minutes, "+seconds+" Seconds");
+				else document.getElementById("timer").innerHTML=(seconds+" Seconds");
+				window.setTimeout(function() {updateTimer()}, 200);
+			}
 		}
 	</script>
+		
+	
+	
 </head>
 <body>
 <div class="header">
@@ -41,8 +111,13 @@
 	
 	<script language="JavaScript">
 		updateTimer();
-		window.setInterval(function() {updateTimer()}, 200);
+		window.setTimeout(function() {updateTimer()}, 200);
 	</script>
+	
+	<div id="unitycontent">
+	<div id="unityPlayer">
+	</div>
+	</div>
 	
 	<div class="gamepanel">
 		<div class="photo">
