@@ -18,6 +18,7 @@ h3.cyberwarscountdown {
 	text-align: center;
 	color: #9a0000;
 	font-weight: bold;
+	font-family:arial;
 	font-size: 24px;
 	background-color: 000000;
 	padding-bottom: 0px;
@@ -25,6 +26,7 @@ h3.cyberwarscountdown {
 }
 
 h3.bigger {
+	font-family:arial;
 	margin-top:0px;
 	font-weight: bolder;
 	font-size: 32px;
