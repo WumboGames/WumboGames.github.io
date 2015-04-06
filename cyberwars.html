@@ -16,7 +16,7 @@
 	</script>
 	<script type="text/javascript">
 		<!--
-		function runGame() {
+		/*function runGame() {*/
 			var config = {
 				width: 960, 
 				height: 600,
@@ -61,10 +61,12 @@
 				});
 				u.initPlugin(jQuery("#unityPlayer")[0], "CyberWars.unity3d");
 			});
+		/*}*/
 		-->
-		}
 		</script>
-	<script language= "JavaScript">
+	
+	<!--countdown timer-->
+	<!--<script language= "JavaScript">
 		function updateTimer() {
 			var currentDay=new Date();
 			var seconds=60-currentDay.getSeconds();
@@ -85,7 +87,7 @@
 				window.setTimeout(function() {updateTimer()}, 200);
 			}
 		}
-	</script>
+	</script>-->
 		
 	
 	
@@ -103,6 +105,9 @@
 	</ul>
 	<br clear="all">
 	
+	
+	<!--countdown timer-->
+	<!--
 	<div id="cyberwarscountdown">
 		<h3 class="cyberwarscountdown">Cyber Wars Countdown Timer:</h3>
 		<h3 class="cyberwarscountdown bigger" id="timer">Loading...</h3>
@@ -113,9 +118,13 @@
 		updateTimer();
 		window.setTimeout(function() {updateTimer()}, 200);
 	</script>
+	-->
 	
 	<div id="unitycontent">
 	<div id="unityPlayer">
+	Something went wrong somewhere. If you are reading this, you probably don't have Unity Web Player installed 
+	(its free and a completely safe download), or you may just need to restart your browser if you know you have
+	Unity Web Player.
 	</div>
 	</div>
 	
