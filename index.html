@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Wumbo Games</title>
+	<meta name="author" content="David Harmeyer">
+	<link rel="stylesheet" type="text/css" href="stylestest.css">
+	
+	<!--countdown timer:-->
+	<!--
+	<script language= "JavaScript">
+		function updateTimer() {
+			var currentDay=new Date();
+			var seconds=60-currentDay.getSeconds();
+			var minutes=60-(currentDay.getMinutes()+45);
+			var hours=11-(currentDay.getHours());
+			if (minutes<0) {
+				minutes+=60;
+				hours--;
+			}
+			if (hours<0) {
+				document.getElementById("timer").innerHTML=("Play it Now!");
+			}
+			else {
+				if (hours>0) document.getElementById("timer").innerHTML=(hours+" Hours, "+minutes+" Minutes, "+seconds+" Seconds");
+				else if (minutes>0) document.getElementById("timer").innerHTML=(minutes+" Minutes, "+seconds+" Seconds");
+				else document.getElementById("timer").innerHTML=(seconds+" Seconds");
+				window.setTimeout(function() {updateTimer()}, 200);
+			}
+		}-->
+
+</head>
+<body>
+<div class="header">
+	<img src="wumbogamesbanner.png" width="100%" padding=0px>
+</div>
+
+<div class="maintext">
+	<ul class="directory">
+		<li><a class="directory" href="index.html">Games</a></li>
+		<li><a class="directory" href="VeggieDefense.html">Veggie Defense</a></li>
+		<li><a class="directory" href="cyberwars.html">Cyber Wars</a></li>
+	</ul>
+	<br clear="all">
+	
+	<!--countdown timer:-->
+	<!--<div id="cyberwarscountdown">+
+		<h3 class="cyberwarscountdown">Cyber Wars Countdown Timer:</h3>
+		<h3 class="cyberwarscountdown bigger" id="timer">Loading...</h3>
+	</div>
+	<br clear="all">-->
+	
+	<script language="JavaScript">
+		updateTimer();
+		window.setInterval(function() {updateTimer()}, 200);
+	</script>
+	
+	<div class="gamepanel">
+		<div class="photo photoright">
+			<a href="cyberwars.html"><img src="cyberwarstitlescreen.png" width="300px"></a>
+		</div>
+		<div class="gamedescription">
+			<p class="normal">Cyber Wars is a strategic 2- to 4-player game where players take turns trying to hack
+			into the opponent's base. A tutorial on how to play should be coming soon!
+			<br>Check out the new <a href="cyberwars.html">Cyber Wars trailers!</a></p>
+		</div>
+	</div>
+	<br clear="all">
+	
+	<div class="gamepanel">
+		<div class="photo">
+			<a href="cramped.html"><img src="crampedtitlescreen.png" width="300px"></a>
+		</div>
+		<div class="gamedescription">
+			<p class="normal">Cramped is a puzzle platformer where the main goal is to get back to your igloo. However, you can't play until you
+			build the level. Once you fit all the pieces onto the screen, you can play through and make it to the igloo.</p>
+		</div>
+	</div>
+	<br clear="all">
+	
+	<div class="gamepanel">
+		<div class="photo photoright">
+			<a href="tempus.html"><img src="tempustitlescreen.png" width="300px"></a>
+		</div>
+		<div class="gamedescription">
+			<p class="normal">Tempus is a game made for a mini <a href="http://ludumdare.com/compo/" target="_blank">Ludum Dare</a> competition with the theme:
+				<i>The Future is Now</i>. In it, you physically control time, and have the ability to go into the future or past to beat levels.</p>
+		</div>
+	</div>
+	<br clear="all">
+	
+	<div class="gamepanel">
+		<div class="photo">
+			<a href="under.html"><img src="undertitlescreen.png" width="300px"></a>
+		</div>
+		<div class="gamedescription">
+			<p class="normal">Under-Life of a Frog, is a game made (again) for a <a href="http://ludumdare.com/compo/" target="_blank">Ludum Dare</a> competition.
+				It was the first game made by WiErD0 Games with Java, and more of an experiment than anything else. It features random, infinite terrain
+				generation, huge collision boxes, and a whole lot of useless code. Enjoy!</p>
+		</div>
+	</div>
+	<br clear="all">
+	
+</div>
+</body>
+</html>
