@@ -4,15 +4,15 @@
 	<title>Wumbo Games</title>
 	<meta name="author" content="David Harmeyer">
 	<link rel="stylesheet" type="text/css" href="stylestest.css">
-	
+
 	<!--countdown timer:-->
-	<!--
+
 	<script language= "JavaScript">
 		function updateTimer() {
 			var currentDay=new Date();
 			var seconds=60-currentDay.getSeconds();
-			var minutes=60-(currentDay.getMinutes()+45);
-			var hours=11-(currentDay.getHours());
+			var minutes=30-(currentDay.getMinutes());
+			var hours=16-(currentDay.getHours());
 			if (minutes<0) {
 				minutes+=60;
 				hours--;
@@ -26,7 +26,10 @@
 				else document.getElementById("timer").innerHTML=(seconds+" Seconds");
 				window.setTimeout(function() {updateTimer()}, 200);
 			}
-		}-->
+		}
+		</script>
+
+
 
 </head>
 <body>
@@ -37,27 +40,28 @@
 <div class="maintext">
 	<ul class="directory">
 		<li><a class="directory" href="index.html">Games</a></li>
-		<li><a class="directory" href="momentum.html">Momentum</a></li>
+		<li><a class="directory" href="momentum/momentum.html">Momentum</a></li>
 		<li><a class="directory" href="cyberwars.html">Cyber Wars</a></li>
 	</ul>
 	<br clear="all">
-	
+
 	<!--countdown timer:-->
-	<!--<div id="cyberwarscountdown">+
-		<h3 class="cyberwarscountdown">Cyber Wars Countdown Timer:</h3>
+	<div id="cyberwarscountdown">+
+		<h3 class="cyberwarscountdown">Victor's Game Countdown Timer:</h3>
 		<h3 class="cyberwarscountdown bigger" id="timer">Loading...</h3>
+		<h3 class="cyberwarscountdown"><br></h3>
 	</div>
-	<br clear="all">-->
-	
+	<br clear="all">
+
 	<script language="JavaScript">
 		updateTimer();
 		window.setInterval(function() {updateTimer()}, 200);
 	</script>
-	
+
 	<div class="gamepanel">
 		<br>
 		<br>
-		
+
 		<div class="photo photoright">
 			<a href="cyberwars.html"><img src="cyberwarstitlescreen.png" width="300px"></a>
 		</div>
@@ -68,10 +72,10 @@
 		</div>
 	</div>
 	<br clear="all">
-	
+
 	<div class="gamepanel">
 		<div class="photo">
-			<a href="cramped.html"><img src="crampedtitlescreen.png" width="300px"></a>
+			<a href="cramped/cramped.html"><img src="cramped/crampedtitlescreen.png" width="300px"></a>
 		</div>
 		<div class="gamedescription">
 			<p class="normal">Cramped is a puzzle platformer where the main goal is to get back to your igloo. However, you can't play until you
@@ -79,10 +83,10 @@
 		</div>
 	</div>
 	<br clear="all">
-	
+
 	<div class="gamepanel">
 		<div class="photo photoright">
-			<a href="tempus.html"><img src="tempustitlescreen.png" width="300px"></a>
+			<a href="tempus/tempus.html"><img src="tempus/tempustitlescreen.png" width="300px"></a>
 		</div>
 		<div class="gamedescription">
 			<p class="normal">Tempus is a game made for a mini <a href="http://ludumdare.com/compo/" target="_blank">Ludum Dare</a> competition with the theme:
@@ -90,10 +94,10 @@
 		</div>
 	</div>
 	<br clear="all">
-	
+
 	<div class="gamepanel">
 		<div class="photo">
-			<a href="under.html"><img src="undertitlescreen.png" width="300px"></a>
+			<a href="under/under.html"><img src="under/undertitlescreen.png" width="300px"></a>
 		</div>
 		<div class="gamedescription">
 			<p class="normal">Under-Life of a Frog, is a game made (again) for a <a href="http://ludumdare.com/compo/" target="_blank">Ludum Dare</a> competition.
@@ -102,7 +106,20 @@
 		</div>
 	</div>
 	<br clear="all">
-	
+
+	<div class="gamepanel">
+		<div class="photo photoright">
+			<a href="pascal'sTriangle/PascalsTriangle.html"><img src="pascal'sTriangle/Pascal'sTriangleScreenshot.png" width="300px"></a>
+		</div>
+		<div class="gamedescription">
+			<p class="normal">When I was enrolled in an AP stats class, I looked at Pascal's Triangle and thought that if you drew the heights of each number in a row,
+				the shape might converge to another special shape. Have you taken any statistics classes? If you have and want to see it convergy for yourself,
+				<a href="pascal'sTriangle/PascalsTriangle.html"> check it out!</a>
+			</thead></p>
+		</div>
+	</div>
+	<br clear="all">
+
 </div>
 </body>
 </html>

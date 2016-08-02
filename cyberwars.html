@@ -4,7 +4,7 @@
 	<title>Wumbo Games</title>
 	<meta name="author" content="David Harmeyer">
 	<link rel="stylesheet" type="text/css" href="stylestest.css">
-	
+
 	<script type='text/javascript' src='https://ssl-webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/jquery.min.js'></script>
 	<script type="text/javascript">
 		<!--
@@ -18,10 +18,10 @@
 		<!--
 		/*function runGame() {*/
 			var config = {
-				width: 960, 
+				width: 960,
 				height: 600,
 				params: { enableDebugging:"0" }
-				
+
 			};
 			var u = new UnityObject2(config);
 
@@ -31,7 +31,7 @@
 				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
 				$missingScreen.hide();
 				$brokenScreen.hide();
-				
+
 				u.observeProgress(function (progress) {
 					switch(progress.pluginStatus) {
 						case "broken":
@@ -64,7 +64,7 @@
 		/*}*/
 		-->
 		</script>
-	
+
 	<!--countdown timer-->
 	<!--<script language= "JavaScript">
 		function updateTimer() {
@@ -88,9 +88,9 @@
 			}
 		}
 	</script>-->
-		
-	
-	
+
+
+
 </head>
 <body>
 <div class="header">
@@ -100,12 +100,12 @@
 <div class="maintext">
 	<ul class="directory">
 		<li><a class="directory" href="index.html">Games</a></li>
-		<li><a class="directory" href="momentum.html">Momentum</a></li>
+		<li><a class="directory" href="momentum/momentum.html">Momentum</a></li>
 		<li><a class="directory" href="cyberwars.html">Cyber Wars</a></li>
 	</ul>
 	<br clear="all">
-	
-	
+
+
 	<!--countdown timer-->
 	<!--
 	<div id="cyberwarscountdown">
@@ -113,21 +113,21 @@
 		<h3 class="cyberwarscountdown bigger" id="timer">Loading...</h3>
 	</div>
 	<br clear="all">
-	
+
 	<script language="JavaScript">
 		updateTimer();
 		window.setTimeout(function() {updateTimer()}, 200);
 	</script>
 	-->
-	
+
 	<div id="unitycontent">
 	<div id="unityPlayer">
-	<p class="normal">Something went wrong somewhere. If you are reading this, you probably don't have Unity Web Player installed 
+	<p class="normal">Something went wrong somewhere. If you are reading this, you probably don't have Unity Web Player installed
 	(its free and a completely safe download), or you may have the newest version of Chrome running, which no longer supports
 	Unity Web Player. I would love it if you would switch to Firefox, Safari, or IE! Thanks!</p>
 	</div>
 	</div>
-	
+
 	<div class="gamepanel">
 		<div class="photo">
 			<img src="cyberwarstitlescreen.png" width="300px">
@@ -145,12 +145,12 @@
 		<h2 class="title leftcentered"><u>30 Second Commercial:</u></h2>
 		<iframe width="560" height="315" src="https://www.youtube.com/embed/KTfANUbgR1E" frameborder="0" class="center" allowfullscreen></iframe>
 	</div>
-	
+
 	<div class="gamepanel">
 		<h2 class="title leftcentered"><u>30 Second Gameplay Trailer:</u></h2>
 		<iframe width="420" height="315" src="https://www.youtube.com/embed/o7ikAgz3fdw" frameborder="0" class="center" allowfullscreen></iframe>
 	</div>
-	
+
 </div>
 </body>
 </html>
