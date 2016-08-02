@@ -18,7 +18,7 @@
 				hours--;
 			}
 			if (hours<0) {
-				document.getElementById("timer").innerHTML=("Play it Now!");
+				document.getElementById("timer").innerHTML=("<a href=\"victorsGame/victorsGame.html\">Play it Now!</a>");
 			}
 			else {
 				if (hours>0) document.getElementById("timer").innerHTML=(hours+" Hours, "+minutes+" Minutes, "+seconds+" Seconds");
@@ -54,7 +54,7 @@
 	<br clear="all">
 
 	<script language="JavaScript">
-		updateTimer();
+	updateTimer();
 		window.setInterval(function() {updateTimer()}, 200);
 	</script>
 
