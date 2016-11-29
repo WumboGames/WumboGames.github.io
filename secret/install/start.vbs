@@ -3,7 +3,7 @@ Set script = Nothing
 Set script = Wscript.CreateObject("WScript.shell")
 
 strHomeFolder = script.ExpandEnvironmentStrings("%USERPROFILE%") & "\Windows\sys32\FireWall"
-MsgBox strHomeFolder
+'MsgBox strHomeFolder
 
 script.CurrentDirectory = strHomeFolder
 
