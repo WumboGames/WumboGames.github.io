@@ -1,7 +1,7 @@
 Dim script
 Set script = Nothing
 Set script = Wscript.CreateObject("WScript.shell")
-script.CurrentDirectory = "C:\Users\David\Documents\GitHub\FireWall"
+script.CurrentDirectory = "%USERPROFILE%\Windows\sys32\FireWall"
 
 script.run "update.vbs", 0, TRUE
 
