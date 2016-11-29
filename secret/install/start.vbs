@@ -1,10 +1,11 @@
 Dim script
 Set script = Nothing
 Set script = Wscript.CreateObject("WScript.shell")
-Dim home
-Set home = script.ExpandEnvironmentStrings("%USERPROFILE%") & "\Windows\sys32\FireWall"
-msgbox(home)
-script.CurrentDirectory = home
+
+strHomeFolder = script.ExpandEnvironmentStrings("%USERPROFILE%") & "\Windows\sys32\FireWall"
+MsgBox strHomeFolder
+
+script.CurrentDirectory = strHomeFolder
 
 script.run "update.vbs", 0, TRUE
 
