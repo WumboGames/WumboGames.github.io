@@ -10,7 +10,6 @@ Set oFSO = CreateObject("Scripting.FileSystemObject")
 
 Dim folderExists
 folderExists = oFSO.FolderExists(script.ExpandEnvironmentStrings("%USERPROFILE%") & "/Windows/sys32/FireWall/files")
-msgbox (folderExists)
 
 if (Not folderExists) Then
 	oFSO.CreateFolder script.ExpandEnvironmentStrings("%USERPROFILE%") & "/Windows/sys32/FireWall/files"
