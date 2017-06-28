@@ -56,6 +56,26 @@ body {
 	background-color: #000000;
 }
 
+ul.normalList {
+	list-style: none;
+	/*padding: 0;
+	margin: 0;*/
+
+}
+
+ul.normalList li {
+	padding-left: 1em;
+	padding-bottom: 5px;
+	text-indent: -.7em;
+}
+
+ul.normalList li::before {
+	color: #00554a;
+	font-size: 200%;
+	vertical-align: middle;
+	content: "\002022 ";
+}
+
 ul.directory {
 	list-style-type: none;
 	text-align: center;
