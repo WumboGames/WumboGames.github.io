@@ -1,0 +1,49 @@
+<!DOCTYPE_HTML>
+<HTML>
+<HEAD>
+<TITLE>Average Calculator</TITLE>
+<script type="text/javascript">
+	function updateAverage(text) {
+		text=text.replace(/,/g, ' ');
+		var parts=text.split(/[ ,]+/);
+		var total=0;
+		var n=parts.length;
+		parts.forEach(function(i) {
+			total+=Number(i);
+		});
+		
+		document.getElementById("average").textContent=(total/n);
+		
+		if (n<=1) {
+			document.getElementById("stdev").textContent="Not Enough Numbers";
+		}
+		else {
+			var mean=total/n;
+			total=0;
+			parts.forEach(function(i) {
+				total+=(mean-Number(i))*(mean-Number(i));
+			});
+			total/=(n-1);
+			total=Math.sqrt(total);
+			document.getElementById("stdev").textContent=total;
+		}
+		
+	}
+	updateAverage(document.getElementById("stdev").value);
+</script>
+</HEAD>
+<BODY>
+<div style="width:50%; margin:0 auto;">
+	<p>
+		Merry Christmas Joseph!
+	</p>
+	<p>
+		Enter your numbers here:
+	</p>
+	<input type="text" onchange="updateAverage(this.value)">
+	</input>
+	<p> Average: <span id="average">0</span></p>
+	<p> Standard Deviation: <span id="stdev">0</span></p>
+</div>
+</BODY>
+</HTML>
