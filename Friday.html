@@ -23,7 +23,16 @@ function inputChanged() {
 	var text="";
 	for (var i=1; i<9; i++)
 		text=text+document.getElementById("inputField"+i).value;
+	text=text.toLowerCase();
 	if (hashCode(text.toLowerCase())==-2126423541) {
+		var ciphered="bInnmHGnkftxmotDCnlkkwwCkIAkkDBIpGEj";
+		var alpha="abcdefghijklmnopqrstuvwxyz";
+		alpha=alpha+alpha.toUpperCase()+". ";
+		var deciphered="";
+		for (var i=0; i<ciphered.length; i++) {
+			deciphered=deciphered+alpha.charAt((alpha.indexOf(ciphered.charAt(i))-alpha.indexOf(text.charAt(i%text.length)) + alpha.length)%alpha.length);
+		}
+		document.getElementById("clue2").innerHTML=deciphered;
 		unlockGate2();
 	}
 }
@@ -41,8 +50,10 @@ function inputChanged2() {
 		for (var i=0; i<ciphered.length; i++) {
 			deciphered=deciphered+alpha.charAt((alpha.indexOf(ciphered.charAt(i))-alpha.indexOf(text.charAt(i%text.length)) + alpha.length)%alpha.length);
 		}
-		alert(deciphered);
-		window.open('','_self').close();
+		//alert(deciphered);
+		//window.open('','_self').close();
+		document.getElementById("finalText").innerHTML=deciphered;
+		document.getElementById("complete").style.display="initial";
 	}
 }
 
@@ -53,6 +64,10 @@ function inputChanged2() {
 <hr>
 <input id="buttonToDisappear" type="button" value="Begin" onclick="doFunction();" />
 <div style="display: none" id="initiallyHidden">
+	<p>
+	For further welcoming, find a welcome sign, courtesy of Duke Energy.
+	</p>
+	<hr/>
 	<p>Key 1:
 	<input type="text" maxlength="1" onchange="inputChanged()" id="inputField1" style="width: 12px;" value=""> </input>
 	<input type="text" maxlength="1" onchange="inputChanged()" id="inputField2" style="width: 12px;" value=""> </input>
@@ -66,7 +81,8 @@ function inputChanged2() {
 	<hr>
 </div>
 <div style="display: none" id="finalLock">
-	<p>Success.</p>
+	<p id="clue2"></p>
+	<hr/>
 	<p>Final Key:
 	<input type="text" maxlength="1" onchange="inputChanged2()" id="inputField21" style="width: 12px;" value=""> </input>
 	<input type="text" maxlength="1" onchange="inputChanged2()" id="inputField22" style="width: 12px;" value=""> </input>
@@ -77,6 +93,11 @@ function inputChanged2() {
 	<input type="text" maxlength="1" onchange="inputChanged2()" id="inputField27" style="width: 12px;" value=""> </input>
 	<input type="text" maxlength="1" onchange="inputChanged2()" id="inputField28" style="width: 12px;" value=""> </input>
 	<input type="text" maxlength="1" onchange="inputChanged2()" id="inputField29" style="width: 12px;" value=""> </input>
+	</p>
+</div>
+<div style="display: none" id="complete">
+	<hr/>
+	<p id="finalText">
 	</p>
 </div>
 </body>
