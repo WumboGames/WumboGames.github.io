@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<HTML>
+<head>
+<title>
+???
+</title>
+<script type="text/javascript">
+//lol this code doesn't contain the codewords. Anyone can read javascript. :p
+
+function doFunction() {
+	//document.getElementById("clickme").style.display="none";
+	var button = document.getElementById("buttonToDisappear");
+	button.parentNode.removeChild(button);
+	document.getElementById("initiallyHidden").style.display="initial";
+}
+hashCode = function(s){
+  return s.split("").reduce(function(a,b){a=((a<<5)-a)+b.charCodeAt(0);return a&a},0);              
+}
+function unlockGate2() {
+	document.getElementById("finalLock").style.display="initial";
+}
+function inputChanged() {
+	var text="";
+	for (var i=1; i<9; i++)
+		text=text+document.getElementById("inputField"+i).value;
+	text=text.toLowerCase();
+	if (hashCode(text.toLowerCase())==-2126423541) {
+		var ciphered="bInnmHGnkftxmotDCnlkkwwCkIAkkDBIpGEj";
+		var alpha="abcdefghijklmnopqrstuvwxyz";
+		alpha=alpha+alpha.toUpperCase()+". ";
+		var deciphered="";
+		for (var i=0; i<ciphered.length; i++) {
+			deciphered=deciphered+alpha.charAt((alpha.indexOf(ciphered.charAt(i))-alpha.indexOf(text.charAt(i%text.length)) + alpha.length)%alpha.length);
+		}
+		document.getElementById("clue2").innerHTML=deciphered;
+		unlockGate2();
+	}
+}
+
+function inputChanged2() {
+	var text="";
+	for (var i=1; i<10; i++)
+		text=text+document.getElementById("inputField2"+i).value;
+	text=text.toLowerCase();
+	if (hashCode(text.toLowerCase())==-1844766387) {
+		var ciphered="PiJCoFrdprmGvkKicmUeNkxudeIdiCkhCidvq ebRqjvrhzvBe";
+		var alpha="abcdefghijklmnopqrstuvwxyz";
+		alpha=alpha+alpha.toUpperCase()+". ";
+		var deciphered="";
+		for (var i=0; i<ciphered.length; i++) {
+			deciphered=deciphered+alpha.charAt((alpha.indexOf(ciphered.charAt(i))-alpha.indexOf(text.charAt(i%text.length)) + alpha.length)%alpha.length);
+		}
+		//alert(deciphered);
+		//window.open('','_self').close();
+		document.getElementById("finalText").innerHTML=deciphered;
+		document.getElementById("complete").style.display="initial";
+	}
+}
+
+</script>
+</head>
+<body>
+<p>Welcome.</p>
+<hr>
+<input id="buttonToDisappear" type="button" value="Begin" onclick="doFunction();" />
+<div style="display: none" id="initiallyHidden">
+	<p>
+	For further welcoming, find a welcome sign, courtesy of Duke Energy.
+	</p>
+	<hr/>
+	<p>Key 1:
+	<input type="text" maxlength="1" onchange="inputChanged()" id="inputField1" style="width: 12px;" value=""> </input>
+	<input type="text" maxlength="1" onchange="inputChanged()" id="inputField2" style="width: 12px;" value=""> </input>
+	<input type="text" maxlength="1" onchange="inputChanged()" id="inputField3" style="width: 12px;" value=""> </input>
+	<input type="text" maxlength="1" onchange="inputChanged()" id="inputField4" style="width: 12px;" value=""> </input>
+	<input type="text" maxlength="1" onchange="inputChanged()" id="inputField5" style="width: 12px;" value=""> </input>
+	<input type="text" maxlength="1" onchange="inputChanged()" id="inputField6" style="width: 12px;" value=""> </input>
+	<input type="text" maxlength="1" onchange="inputChanged()" id="inputField7" style="width: 12px;" value=""> </input>
+	<input type="text" maxlength="1" onchange="inputChanged()" id="inputField8" style="width: 12px;" value=""> </input>
+	</p>
+	<hr>
+</div>
+<div style="display: none" id="finalLock">
+	<p id="clue2"></p>
+	<hr/>
+	<p>Final Key:
+	<input type="text" maxlength="1" onchange="inputChanged2()" id="inputField21" style="width: 12px;" value=""> </input>
+	<input type="text" maxlength="1" onchange="inputChanged2()" id="inputField22" style="width: 12px;" value=""> </input>
+	<input type="text" maxlength="1" onchange="inputChanged2()" id="inputField23" style="width: 12px;" value=""> </input>
+	<input type="text" maxlength="1" onchange="inputChanged2()" id="inputField24" style="width: 12px;" value=""> </input>
+	&nbsp;
+	&nbsp;
+	<input type="text" maxlength="1" onchange="inputChanged2()" id="inputField25" style="width: 12px;" value=""> </input>
+	<input type="text" maxlength="1" onchange="inputChanged2()" id="inputField26" style="width: 12px;" value=""> </input>
+	<input type="text" maxlength="1" onchange="inputChanged2()" id="inputField27" style="width: 12px;" value=""> </input>
+	<input type="text" maxlength="1" onchange="inputChanged2()" id="inputField28" style="width: 12px;" value=""> </input>
+	<input type="text" maxlength="1" onchange="inputChanged2()" id="inputField29" style="width: 12px;" value=""> </input>
+	</p>
+</div>
+<div style="display: none" id="complete">
+	<hr/>
+	<p id="finalText">
+	</p>
+</div>
+</body>
+</HTML>
